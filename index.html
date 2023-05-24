@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>素数</title>
+</head>
+<body>
+<input type="number" id="number"/>
+<button onclick="getPrimes()">解く</button>
+<div id="primes"></div>
+<script>
+function getPrimes() {
+var number = Number(document.getElementById("number").value);
+var primes = [];
+for (var i = 2; i <= number; i++) {
+var isPrime = true;
+for (var j = 2; j * j <= i; j++) {
+if (i % j === 0) {
+isPrime = false;
+break;}}
+if (isPrime) {
+primes.push(i);}}
+document.getElementById("primes").innerHTML = primes.join(" ");}
+</script>
+</body>
+</html>
